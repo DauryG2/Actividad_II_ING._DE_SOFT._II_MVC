@@ -11,12 +11,12 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.CONTROLADOR
     public class MonitorController
     {
         private UserRepo _UserRepo;
-        private RolRepo _rolRepository;
+        private RolRepo _RolRepo;
 
         public MonitorController()
         {
             _UserRepo = new UserRepo();
-            _rolRepository = new RolRepo();
+            _RolRepo = new RolRepo();
         }
 
         public DataTable ObtenerUsuarios()
