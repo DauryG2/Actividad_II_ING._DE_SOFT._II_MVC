@@ -14,12 +14,11 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         public Login()
         {
             InitializeComponent();
-            _controller = new LoginController(); // Instanciar el controlador
+            _controller = new LoginController(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Le pedimos al controlador que haga el trabajo pesado
             string resultado = _controller.IniciarSesion(UserBox.Text, PassBox.Text);
 
             switch (resultado)

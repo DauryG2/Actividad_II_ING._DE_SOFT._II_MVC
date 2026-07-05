@@ -34,7 +34,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         private void verToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Monitor MonitorForm = new Monitor("Administrador");
+            MonitorAdmin MonitorForm = new MonitorAdmin("Administrador");
             MonitorForm.Show();
         }
     }

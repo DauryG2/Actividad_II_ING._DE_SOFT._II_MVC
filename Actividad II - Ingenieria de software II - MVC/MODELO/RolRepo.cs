@@ -30,22 +30,5 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.MODELO
                 throw new Exception("Error al obtener roles: " + ex.Message);
             }
         }
-
-        public bool ExisteAdministrador()
-        {
-            try
-            {
-                using var conn = _dbConnection.OpenConnection();
-                using (var cmd = new NpgsqlCommand("SELECT rol_name FROM Rols WHERE rol_name = 'Administrador'", conn))
-                {
-                    using var reader = cmd.ExecuteReader();
-                    return reader.HasRows;
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
     }
 }

@@ -13,4 +13,10 @@
     <PackageReference Include="Npgsql" Version="10.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="VISTA\MonitorAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

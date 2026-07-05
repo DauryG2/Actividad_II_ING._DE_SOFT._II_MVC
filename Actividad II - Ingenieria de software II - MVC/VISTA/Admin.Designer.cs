@@ -64,7 +64,7 @@
             // 
             verToolStripMenuItem.Name = "verToolStripMenuItem";
             verToolStripMenuItem.Size = new Size(180, 22);
-            verToolStripMenuItem.Text = "Ver usuarios";
+            verToolStripMenuItem.Text = "Gestionar usuarios";
             verToolStripMenuItem.Click += verToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem

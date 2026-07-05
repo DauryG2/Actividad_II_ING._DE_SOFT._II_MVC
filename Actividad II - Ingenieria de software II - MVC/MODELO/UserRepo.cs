@@ -36,7 +36,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.MODELO
                             RolName = reader.GetString(2)
                         };
                     }
-                    return null; // Usuario no encontrado
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -88,6 +88,26 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.MODELO
             catch (Exception ex)
             {
                 throw new Exception("Error al registrar usuario: " + ex.Message);
+            }
+        }
+
+        public bool EliminarUsuario(int userId)
+        {
+            try
+            {
+                using var conn = _dbConnection.OpenConnection();
+                string query = "DELETE FROM users WHERE ID = @userId";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0; 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar usuario: " + ex.Message);
             }
         }
     }

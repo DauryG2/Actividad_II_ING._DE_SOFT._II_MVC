@@ -24,6 +24,10 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             ShowUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             RefrescarTabla();
             _rolUsuarioLogueado = rol;
+            ShowUsers.Columns[0].HeaderText = "Id";
+            ShowUsers.Columns[1].HeaderText = "Nombre";
+            ShowUsers.Columns[2].HeaderText = "Apellido";
+            ShowUsers.Columns[3].HeaderText = "Rol";
         }
         private void RefrescarTabla()
         {
