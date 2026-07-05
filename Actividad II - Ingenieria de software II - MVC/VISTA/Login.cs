@@ -9,12 +9,12 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
     public partial class Login : Form
     {
 
-        private LoginController _controller;
+        private UserController _controller;
 
         public Login()
         {
             InitializeComponent();
-            _controller = new LoginController(); 
+            _controller = new UserController(); 
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -27,7 +27,8 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             ShowUsers.Columns[0].HeaderText = "Id";
             ShowUsers.Columns[1].HeaderText = "Nombre";
             ShowUsers.Columns[2].HeaderText = "Apellido";
-            ShowUsers.Columns[3].HeaderText = "Rol";
+            ShowUsers.Columns[3].HeaderText = "Usuario";
+            ShowUsers.Columns[4].HeaderText = "Rol";
         }
         private void RefrescarTabla()
         {

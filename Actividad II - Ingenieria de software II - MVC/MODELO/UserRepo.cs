@@ -50,7 +50,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.MODELO
             try
             {
                 using var conn = _dbConnection.OpenConnection();
-                string query = "SELECT U.ID, U.name, U.Last_name, R.Rol_name FROM Users U INNER JOIN Rols R On U.ID_Rol = R.ID ORDER BY U.ID;";
+                string query = "SELECT U.ID, U.name, U.Last_name, U.username, R.Rol_name FROM Users U INNER JOIN Rols R On U.ID_Rol = R.ID ORDER BY U.ID;";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -102,12 +102,57 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.MODELO
                 {
                     cmd.Parameters.AddWithValue("userId", userId);
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0; 
+                    return rowsAffected > 0;
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al eliminar usuario: " + ex.Message);
+            }
+        }
+        public void EditarUsuario(string name, string lastname, string user, string rol)
+        {
+            try
+            {
+                using (var conn = _dbConnection.OpenConnection())
+                {
+                    string query = "UPDATE Users SET name = @name, Last_name = @lastname, ID_Rol = (SELECT ID FROM Rols WHERE Rol_name = @rol) WHERE username = @user;";
+                    using (var cmd = new Npgsql.NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("name", name);
+                        cmd.Parameters.AddWithValue("lastname", lastname);
+                        cmd.Parameters.AddWithValue("rol", rol);
+                        cmd.Parameters.AddWithValue("user", user);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected == 0)
+                        {
+                            throw new Exception("No se encontró el usuario para actualizar.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la base de datos: " + ex.Message);
+            }
+        }
+
+        public DataTable ObtenerTodosLosRoles()
+        {
+            try
+            {
+                using var conn = _dbConnection.OpenConnection();
+                using (var cmd = new NpgsqlCommand("SELECT * FROM rols", conn))
+                {
+                    using var reader = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener roles: " + ex.Message);
             }
         }
     }

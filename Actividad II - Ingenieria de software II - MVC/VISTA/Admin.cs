@@ -24,18 +24,16 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             LoginForm.Show();
         }
 
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Register RegisterForm = new Register();
-            RegisterForm.Show();
-        }
-
         private void verToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             MonitorAdmin MonitorForm = new MonitorAdmin("Administrador");
             MonitorForm.Show();
+        }
+
+        private void gestionarAsignacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

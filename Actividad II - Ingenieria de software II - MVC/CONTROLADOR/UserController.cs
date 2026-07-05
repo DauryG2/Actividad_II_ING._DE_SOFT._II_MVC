@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace Actividad_II___Ingenieria_de_software_II___MVC.CONTROLADOR
 {
-    public class LoginController
+    public class UserController
     {
         private UserRepo _usuarioLog;
+        private UserRepo _userRepo;
 
-        public LoginController()
+        public UserController()
         {
             _usuarioLog = new UserRepo();
+            _userRepo = new UserRepo();
         }
 
         public string IniciarSesion(string username, string password)
@@ -37,6 +39,25 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.CONTROLADOR
                 {
                     return "INCORRECTO";
                 }
+            }
+            catch (Exception ex)
+            {
+                return "ERROR: " + ex.Message;
+            }
+        }
+
+        public string EditarUsuario(string name, string lastname, string user, string rol)
+        {
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(lastname) ||
+            string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(rol))
+            {
+                return "CAMPOS_VACIOS";
+            }
+
+            try
+            {
+                _userRepo.EditarUsuario(name, lastname, user, rol);
+                return "EXITO";
             }
             catch (Exception ex)
             {

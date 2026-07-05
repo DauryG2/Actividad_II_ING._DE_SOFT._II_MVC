@@ -37,13 +37,6 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             }
         }
 
-        private void Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            Admin adminForm = new Admin();
-            adminForm.Show();
-        }
-
         private void Title_Click(object sender, EventArgs e)
         {
             string resultado = _controller.RegistrarNuevoUsuario(

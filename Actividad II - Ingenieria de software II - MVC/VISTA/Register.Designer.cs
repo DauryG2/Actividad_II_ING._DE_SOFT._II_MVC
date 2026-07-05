@@ -41,7 +41,6 @@
             RolsCombo = new ComboBox();
             pictureBox1 = new PictureBox();
             Title = new Label();
-            Back = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -151,23 +150,11 @@
             Title.Text = "REGISTRAR";
             Title.Click += Title_Click;
             // 
-            // Back
-            // 
-            Back.AutoSize = true;
-            Back.Location = new Point(355, 11);
-            Back.Name = "Back";
-            Back.Size = new Size(34, 15);
-            Back.TabIndex = 13;
-            Back.TabStop = true;
-            Back.Text = "Atras";
-            Back.LinkClicked += Back_LinkClicked;
-            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(401, 293);
-            Controls.Add(Back);
             Controls.Add(Title);
             Controls.Add(pictureBox1);
             Controls.Add(RolsCombo);
@@ -201,6 +188,5 @@
         private ComboBox RolsCombo;
         private PictureBox pictureBox1;
         private Label Title;
-        private LinkLabel Back;
     }
 }

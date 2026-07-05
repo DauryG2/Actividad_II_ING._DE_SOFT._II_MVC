@@ -30,7 +30,8 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             ShowUsers.Columns[0].HeaderText = "Id";
             ShowUsers.Columns[1].HeaderText = "Nombre";
             ShowUsers.Columns[2].HeaderText = "Apellido";
-            ShowUsers.Columns[3].HeaderText = "Rol";
+            ShowUsers.Columns[3].HeaderText = "Usuario";
+            ShowUsers.Columns[4].HeaderText = "Rol";
             ShowUsers.MultiSelect = false;
         }
         private void RefrescarTabla()
@@ -53,40 +54,26 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
 
         private void CreateBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Register registerForm = new Register();
             registerForm.Show();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (ShowUsers.SelectedRows.Count == 0 && ShowUsers.CurrentRow == null)
+            int? maybeId = _controller.ObtenerIdSeleccionado(ShowUsers);
+            if (!maybeId.HasValue)
             {
                 MessageBox.Show("Seleccione un usuario para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
+            int userId = maybeId.Value;
+            var confirm = MessageBox.Show($"¿Desea eliminar el usuario con ID {userId}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes) return;
+
             try
             {
-                DataGridViewRow row = ShowUsers.SelectedRows.Count > 0 ? ShowUsers.SelectedRows[0] : ShowUsers.CurrentRow;
-                if (row == null)
-                {
-                    MessageBox.Show("No se pudo determinar la fila seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                object idValue = row.Cells[0].Value;
-                if (idValue == null || !int.TryParse(idValue.ToString(), out int userId))
-                {
-                    MessageBox.Show("El id del usuario seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                var confirm = MessageBox.Show($"¿Desea eliminar el usuario con ID {userId}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (confirm != DialogResult.Yes) 
-                    return;
-
-                bool eliminado = _userRepo.EliminarUsuario(userId);
+                bool eliminado = _controller.EliminarUsuarioPorId(userId);
                 if (eliminado)
                 {
                     MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,6 +112,12 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
                 Login LoginForm = new Login();
                 LoginForm.Show();
             }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            Edit editForm = new Edit();
+            editForm.Show();
         }
     }
 }

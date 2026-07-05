@@ -30,8 +30,10 @@
         {
             menuStrip = new MenuStrip();
             crearUsuariosToolStripMenuItem = new ToolStripMenuItem();
-            crearToolStripMenuItem = new ToolStripMenuItem();
             verToolStripMenuItem = new ToolStripMenuItem();
+            materiasToolStripMenuItem = new ToolStripMenuItem();
+            gestionarAsignacionesToolStripMenuItem = new ToolStripMenuItem();
+            calificacionesToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             menuStrip.SuspendLayout();
@@ -39,7 +41,7 @@
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { crearUsuariosToolStripMenuItem, salirToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { crearUsuariosToolStripMenuItem, materiasToolStripMenuItem, salirToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(375, 24);
@@ -48,17 +50,10 @@
             // 
             // crearUsuariosToolStripMenuItem
             // 
-            crearUsuariosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem, verToolStripMenuItem });
+            crearUsuariosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { verToolStripMenuItem });
             crearUsuariosToolStripMenuItem.Name = "crearUsuariosToolStripMenuItem";
             crearUsuariosToolStripMenuItem.Size = new Size(64, 20);
             crearUsuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // crearToolStripMenuItem
-            // 
-            crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(180, 22);
-            crearToolStripMenuItem.Text = "Registrar usuarios";
-            crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
             // 
             // verToolStripMenuItem
             // 
@@ -66,6 +61,26 @@
             verToolStripMenuItem.Size = new Size(180, 22);
             verToolStripMenuItem.Text = "Gestionar usuarios";
             verToolStripMenuItem.Click += verToolStripMenuItem_Click;
+            // 
+            // materiasToolStripMenuItem
+            // 
+            materiasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionarAsignacionesToolStripMenuItem, calificacionesToolStripMenuItem });
+            materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            materiasToolStripMenuItem.Size = new Size(64, 20);
+            materiasToolStripMenuItem.Text = "Materias";
+            // 
+            // gestionarAsignacionesToolStripMenuItem
+            // 
+            gestionarAsignacionesToolStripMenuItem.Name = "gestionarAsignacionesToolStripMenuItem";
+            gestionarAsignacionesToolStripMenuItem.Size = new Size(195, 22);
+            gestionarAsignacionesToolStripMenuItem.Text = "Gestionar asignaciones";
+            gestionarAsignacionesToolStripMenuItem.Click += gestionarAsignacionesToolStripMenuItem_Click;
+            // 
+            // calificacionesToolStripMenuItem
+            // 
+            calificacionesToolStripMenuItem.Name = "calificacionesToolStripMenuItem";
+            calificacionesToolStripMenuItem.Size = new Size(195, 22);
+            calificacionesToolStripMenuItem.Text = "Calificaciones";
             // 
             // salirToolStripMenuItem
             // 
@@ -80,7 +95,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Brown;
-            label1.Location = new Point(70, 110);
+            label1.Location = new Point(80, 111);
             label1.Name = "label1";
             label1.Size = new Size(229, 26);
             label1.TabIndex = 1;
@@ -106,9 +121,11 @@
 
         private MenuStrip menuStrip;
         private ToolStripMenuItem crearUsuariosToolStripMenuItem;
-        private ToolStripMenuItem crearToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem verToolStripMenuItem;
         private Label label1;
+        private ToolStripMenuItem materiasToolStripMenuItem;
+        private ToolStripMenuItem gestionarAsignacionesToolStripMenuItem;
+        private ToolStripMenuItem calificacionesToolStripMenuItem;
     }
 }

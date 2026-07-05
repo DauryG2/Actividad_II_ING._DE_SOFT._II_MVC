@@ -110,6 +110,7 @@
             EditBtn.TabIndex = 5;
             EditBtn.Text = "Editar";
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
             // MonitorAdmin
             // 

@@ -37,26 +37,29 @@
             // ShowUsers
             // 
             ShowUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ShowUsers.Location = new Point(58, 51);
+            ShowUsers.Location = new Point(21, 40);
             ShowUsers.Name = "ShowUsers";
             ShowUsers.Size = new Size(529, 324);
             ShowUsers.TabIndex = 0;
             // 
             // button1
             // 
+            button1.BackColor = Color.DodgerBlue;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(606, 51);
+            button1.ForeColor = Color.Transparent;
+            button1.Location = new Point(569, 40);
             button1.Name = "button1";
             button1.Size = new Size(114, 40);
             button1.TabIndex = 1;
             button1.Text = "Actualizar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Back
             // 
             Back.AutoSize = true;
-            Back.Location = new Point(681, 21);
+            Back.Location = new Point(644, 10);
             Back.Name = "Back";
             Back.Size = new Size(39, 15);
             Back.TabIndex = 2;
@@ -68,7 +71,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(740, 435);
+            ClientSize = new Size(701, 388);
             Controls.Add(Back);
             Controls.Add(button1);
             Controls.Add(ShowUsers);
