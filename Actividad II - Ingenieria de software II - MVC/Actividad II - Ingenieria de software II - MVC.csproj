@@ -14,7 +14,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="VISTA\EditGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VISTA\AddGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VISTA\EditSubjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VISTA\MonitorAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VISTA\Grades.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

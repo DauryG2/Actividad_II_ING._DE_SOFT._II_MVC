@@ -81,6 +81,7 @@
             calificacionesToolStripMenuItem.Name = "calificacionesToolStripMenuItem";
             calificacionesToolStripMenuItem.Size = new Size(195, 22);
             calificacionesToolStripMenuItem.Text = "Calificaciones";
+            calificacionesToolStripMenuItem.Click += calificacionesToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 

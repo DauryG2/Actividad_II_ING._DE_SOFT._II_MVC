@@ -104,7 +104,7 @@
             Controls.Add(PassLabel);
             Controls.Add(UserLabel);
             Name = "Login";
-            Text = "Login";
+            Text = "Iniciar sesion";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

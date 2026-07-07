@@ -46,7 +46,7 @@
             // 
             // NameBox
             // 
-            NameBox.Location = new Point(20, 47);
+            NameBox.Location = new Point(31, 47);
             NameBox.Name = "NameBox";
             NameBox.Size = new Size(148, 23);
             NameBox.TabIndex = 0;
@@ -54,7 +54,7 @@
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(20, 29);
+            labelName.Location = new Point(31, 29);
             labelName.Name = "labelName";
             labelName.Size = new Size(51, 15);
             labelName.TabIndex = 1;
@@ -63,7 +63,7 @@
             // Last_name
             // 
             Last_name.AutoSize = true;
-            Last_name.Location = new Point(20, 77);
+            Last_name.Location = new Point(31, 77);
             Last_name.Name = "Last_name";
             Last_name.Size = new Size(51, 15);
             Last_name.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // Last_nameBox
             // 
-            Last_nameBox.Location = new Point(20, 95);
+            Last_nameBox.Location = new Point(31, 95);
             Last_nameBox.Name = "Last_nameBox";
             Last_nameBox.Size = new Size(148, 23);
             Last_nameBox.TabIndex = 2;
@@ -79,7 +79,7 @@
             // User
             // 
             User.AutoSize = true;
-            User.Location = new Point(20, 125);
+            User.Location = new Point(31, 125);
             User.Name = "User";
             User.Size = new Size(47, 15);
             User.TabIndex = 5;
@@ -87,7 +87,7 @@
             // 
             // UserBox
             // 
-            UserBox.Location = new Point(20, 143);
+            UserBox.Location = new Point(31, 143);
             UserBox.Name = "UserBox";
             UserBox.Size = new Size(148, 23);
             UserBox.TabIndex = 4;
@@ -95,7 +95,7 @@
             // Password
             // 
             Password.AutoSize = true;
-            Password.Location = new Point(20, 173);
+            Password.Location = new Point(31, 173);
             Password.Name = "Password";
             Password.Size = new Size(67, 15);
             Password.TabIndex = 7;
@@ -103,7 +103,7 @@
             // 
             // PasswordBox
             // 
-            PasswordBox.Location = new Point(20, 191);
+            PasswordBox.Location = new Point(31, 191);
             PasswordBox.Name = "PasswordBox";
             PasswordBox.Size = new Size(148, 23);
             PasswordBox.TabIndex = 6;
@@ -111,7 +111,7 @@
             // RolChoice
             // 
             RolChoice.AutoSize = true;
-            RolChoice.Location = new Point(20, 223);
+            RolChoice.Location = new Point(31, 223);
             RolChoice.Name = "RolChoice";
             RolChoice.Size = new Size(24, 15);
             RolChoice.TabIndex = 9;
@@ -120,7 +120,7 @@
             // RolsCombo
             // 
             RolsCombo.FormattingEnabled = true;
-            RolsCombo.Location = new Point(20, 239);
+            RolsCombo.Location = new Point(31, 239);
             RolsCombo.Name = "RolsCombo";
             RolsCombo.Size = new Size(148, 23);
             RolsCombo.TabIndex = 10;
@@ -143,7 +143,7 @@
             Title.FlatStyle = FlatStyle.Flat;
             Title.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Title.ForeColor = Color.Brown;
-            Title.Location = new Point(239, 244);
+            Title.Location = new Point(240, 234);
             Title.Name = "Title";
             Title.Size = new Size(105, 28);
             Title.TabIndex = 12;
@@ -168,7 +168,7 @@
             Controls.Add(labelName);
             Controls.Add(NameBox);
             Name = "Register";
-            Text = "Register";
+            Text = "Registrar usuario";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

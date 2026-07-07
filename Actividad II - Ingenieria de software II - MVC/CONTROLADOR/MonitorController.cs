@@ -36,18 +36,6 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.CONTROLADOR
 
             return userId;
         }
-
-        public bool EliminarUsuarioPorId(int userId)
-        {
-            return _UserRepo.EliminarUsuario(userId);
-        }
-
-        public DataTable ObtenerUsuarios()
-        {
-            return _UserRepo.ObtenerUsuarios();
-        }
-
-        // Determina a qué pantalla regresar basándose en la existencia del Administrador
         public string DeterminarPantallaDestino(String rolUsuarioActual)
         {
             if (rolUsuarioActual == "Profesor")

@@ -16,6 +16,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
     public partial class MonitorAdmin : Form
     {
         private MonitorController _controller;
+        private UserController _userController;
         private string _rolUsuarioLogueado;
         private UserRepo _userRepo;
 
@@ -24,6 +25,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             InitializeComponent();
             _controller = new MonitorController();
             _userRepo = new UserRepo();
+            _userController = new UserController();
             ShowUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             RefrescarTabla();
             _rolUsuarioLogueado = rol;
@@ -38,7 +40,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         {
             try
             {
-                DataTable dt = _controller.ObtenerUsuarios();
+                DataTable dt = _userController.ObtenerUsuarios();
                 ShowUsers.DataSource = dt;
             }
             catch (Exception ex)
@@ -73,7 +75,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
 
             try
             {
-                bool eliminado = _controller.EliminarUsuarioPorId(userId);
+                bool eliminado = _userController.EliminarUsuarioPorId(userId);
                 if (eliminado)
                 {
                     MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +118,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            Edit editForm = new Edit();
+            EditUser editForm = new EditUser();
             editForm.Show();
         }
     }

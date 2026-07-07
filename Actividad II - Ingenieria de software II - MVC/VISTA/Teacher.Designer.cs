@@ -33,12 +33,14 @@
             verToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
+            materiasToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { crearUsuariosToolStripMenuItem, salirToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { crearUsuariosToolStripMenuItem, materiasToolStripMenuItem, salirToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(375, 24);
@@ -78,6 +80,20 @@
             label1.TabIndex = 1;
             label1.Text = "USTED ES PROFESOR";
             // 
+            // materiasToolStripMenuItem
+            // 
+            materiasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            materiasToolStripMenuItem.Size = new Size(64, 20);
+            materiasToolStripMenuItem.Text = "Materias";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(180, 22);
+            toolStripMenuItem1.Text = "Calificaciones";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
             // Teacher
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -101,5 +117,7 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem verToolStripMenuItem;
         private Label label1;
+        private ToolStripMenuItem materiasToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

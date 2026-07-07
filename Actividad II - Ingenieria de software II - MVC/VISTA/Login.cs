@@ -32,16 +32,19 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
                 case "Administrador":
                     this.Hide();
                     Admin AdminForm = new Admin();
+                    AdminForm.FormClosed += (s, args) => this.Show(); 
                     AdminForm.Show();
                     break;
                 case "Profesor":
                     this.Hide();
                     Teacher TeacherForm = new Teacher();
+                    TeacherForm.FormClosed += (s, args) => this.Show();
                     TeacherForm.Show();
                     break;
                 case "Estudiante":
                     this.Hide();
                     Student StudentForm = new Student();
+                    StudentForm.FormClosed += (s, args) => this.Show();
                     StudentForm.Show();
                     break;
                 default:

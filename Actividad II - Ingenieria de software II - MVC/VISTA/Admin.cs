@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Actividad_II___Ingenieria_de_software_II___MVC.VISTA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,12 +29,24 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         {
             this.Hide();
             MonitorAdmin MonitorForm = new MonitorAdmin("Administrador");
+            MonitorForm.FormClosed += (s, args) => this.Show();
             MonitorForm.Show();
         }
 
         private void gestionarAsignacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Subjects subjectsForm = new Subjects("Administrador");
+            subjectsForm.FormClosed += (s, args) => this.Show();
+            subjectsForm.Show();
+        }
 
+        private void calificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Grades gradesForm = new Grades("Administrador");
+            gradesForm.FormClosed += (s, args) => this.Show();
+            gradesForm.Show();
         }
     }
 }

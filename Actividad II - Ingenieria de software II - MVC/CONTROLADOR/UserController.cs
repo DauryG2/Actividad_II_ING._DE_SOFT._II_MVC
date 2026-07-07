@@ -2,6 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,15 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.CONTROLADOR
             {
                 return "ERROR: " + ex.Message;
             }
+        }
+        public bool EliminarUsuarioPorId(int userId)
+        {
+            return _userRepo.EliminarUsuario(userId);
+        }
+
+        public DataTable ObtenerUsuarios()
+        {
+            return _userRepo.ObtenerUsuarios();
         }
     }
 }

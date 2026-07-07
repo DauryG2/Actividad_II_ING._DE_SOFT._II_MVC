@@ -15,11 +15,13 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
     public partial class Monitor : Form
     {
         private MonitorController _controller;
+        private UserController _userController;
         private string _rolUsuarioLogueado;
 
         public Monitor(string rol)
         {
             InitializeComponent();
+            _userController = new UserController();
             _controller = new MonitorController();
             ShowUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             RefrescarTabla();
@@ -34,7 +36,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         {
             try
             {
-                DataTable dt = _controller.ObtenerUsuarios();
+                DataTable dt = _userController.ObtenerUsuarios();
                 ShowUsers.DataSource = dt;
             }
             catch (Exception ex)

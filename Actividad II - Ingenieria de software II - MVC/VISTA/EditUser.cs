@@ -14,12 +14,12 @@ using System.Runtime.CompilerServices;
 
 namespace Actividad_II___Ingenieria_de_software_II___MVC
 {
-    public partial class Edit : Form
+    public partial class EditUser : Form
     {
         private MonitorController _controller;
-        private UserController _editRepo = new UserController();
+        private UserController _userController = new UserController();
 
-        public Edit()
+        public EditUser()
         {
             InitializeComponent();
             _controller = new MonitorController();
@@ -41,7 +41,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
             string user = userBox.Text.Trim();
             string rol = rolBox.Text.Trim();
 
-            string resultado = _editRepo.EditarUsuario(name, lastname, user, rol);
+            string resultado = _userController.EditarUsuario(name, lastname, user, rol);
 
             if (resultado == "EXITO")
                 MessageBox.Show("Usuario actualizado.");
@@ -55,7 +55,7 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC
         {
             try
             {
-                DataTable dt = _controller.ObtenerUsuarios();
+                DataTable dt = _userController.ObtenerUsuarios();
                 dtUsers.DataSource = dt;
             }
             catch (Exception ex)

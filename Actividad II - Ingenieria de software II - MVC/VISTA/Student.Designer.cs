@@ -89,7 +89,7 @@
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
             Name = "Student";
-            Text = "Student";
+            Text = "Estudiante";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
