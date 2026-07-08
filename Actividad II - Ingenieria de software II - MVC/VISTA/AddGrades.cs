@@ -26,11 +26,13 @@ namespace Actividad_II___Ingenieria_de_software_II___MVC.VISTA
             dtUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtSubject.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             RefrescarTabla();
-            dtGrades.Columns[0].HeaderText = "Usuario";
-            dtGrades.Columns[1].HeaderText = "Nombre";
-            dtGrades.Columns[2].HeaderText = "Apellido";
-            dtGrades.Columns[3].HeaderText = "Materia";
-            dtGrades.Columns[4].HeaderText = "Nota";
+            dtGrades.Columns[0].Visible = false;
+            dtGrades.Columns[1].Visible = false;
+            dtGrades.Columns[2].HeaderText = "Usuario";
+            dtGrades.Columns[3].HeaderText = "Nombre";
+            dtGrades.Columns[4].HeaderText = "Apellido";
+            dtGrades.Columns[5].HeaderText = "Materia";
+            dtGrades.Columns[6].HeaderText = "Nota";
 
             dtUsers.Columns[0].HeaderText = "Id de usuario";
             dtUsers.Columns[1].HeaderText = "Usuario";

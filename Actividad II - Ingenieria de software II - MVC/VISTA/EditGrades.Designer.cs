@@ -194,7 +194,7 @@
             Controls.Add(idBox);
             Controls.Add(label1);
             Name = "EditGrades";
-            Text = "Añadir calificaciones";
+            Text = "Editar calificaciones";
             ((System.ComponentModel.ISupportInitialize)dtGrades).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtSubject).EndInit();
